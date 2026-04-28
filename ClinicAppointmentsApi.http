@@ -1,6 +1,21 @@
-@ClinicAppointmentsApi_HostAddress = http://localhost:5252
+@HostAddress = http://localhost:5252
 
-GET {{ClinicAppointmentsApi_HostAddress}}/weatherforecast/
+GET {{HostAddress}}/api/appointments
 Accept: application/json
 
 ###
+
+GET {{HostAddress}}/api/appointments/1
+Accept: application/json
+
+###
+
+POST {{HostAddress}}/api/appointments
+Content-Type: application/json
+
+{
+  "idPatient": 1,
+  "idDoctor": 2,
+  "appointmentDate": "2026-05-20T10:30:00",
+  "reason": "Control visit"
+}
